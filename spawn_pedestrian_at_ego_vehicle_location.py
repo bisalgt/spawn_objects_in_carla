@@ -19,7 +19,7 @@ spectator = world.get_spectator()
 ### Move the vehicle at a different location slightly
 ### Use the earlier transform value to spawn_pedestrian
 ego_car = world.get_actor(198)
-
+# Getting the transformation of lidar sensor might be more helpful instead of the car
 ego_car_transf = ego_car.get_transform()
 
 # rand_location = world.get_random_location_from_navigation()

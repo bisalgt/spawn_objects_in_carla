@@ -4,3 +4,14 @@ env/
 
 
 *.csv
+
+**/__pycache__
+
+**.pickle
+
+**.json
+
+
+**.png
+
+notebooks/geo3dfeatures/
