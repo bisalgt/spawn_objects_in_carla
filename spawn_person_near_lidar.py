@@ -41,3 +41,21 @@ pedestrian = world.try_spawn_actor(pedestrian_bp, new_transf)
 
 # changes the viewpoint to the person spawn point in carla
 spectator.set_transform(new_transf)
+
+rotations = [i*20 for i in range(10)]
+rotation_by = (0, random.choice(rotations), 0)
+
+
+
+pedestrian.destroy()
+shift_xyz = [15, 2, 0]
+new_location_array = lidar_sensor_location.x + shift_xyz[0], lidar_sensor_location.y + shift_xyz[1] , lidar_sensor_location.z + shift_xyz[2]
+new_location = carla.Location(*new_location_array)
+rotation_by = (0, random.choice(rotations), 0)
+new_rotation = carla.Rotation(*rotation_by)
+new_transf = carla.Transform(new_location, new_rotation)
+pedestrian_bp = random.choice(world.get_blueprint_library().filter('*walker.pedestrian*'))
+pedestrian = world.try_spawn_actor(pedestrian_bp, new_transf)
+
+
+pedestrian.destroy()
