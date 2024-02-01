@@ -47,15 +47,33 @@ rotation_by = (0, random.choice(rotations), 0)
 
 
 
-pedestrian.destroy()
-shift_xyz = [15, 2, 0]
-new_location_array = lidar_sensor_location.x + shift_xyz[0], lidar_sensor_location.y + shift_xyz[1] , lidar_sensor_location.z + shift_xyz[2]
-new_location = carla.Location(*new_location_array)
-rotation_by = (0, random.choice(rotations), 0)
-new_rotation = carla.Rotation(*rotation_by)
-new_transf = carla.Transform(new_location, new_rotation)
-pedestrian_bp = random.choice(world.get_blueprint_library().filter('*walker.pedestrian*'))
-pedestrian = world.try_spawn_actor(pedestrian_bp, new_transf)
+# pedestrian.destroy()
+# shift_xyz = [15, 2, 0]
+# new_location_array = lidar_sensor_location.x + shift_xyz[0], lidar_sensor_location.y + shift_xyz[1] , lidar_sensor_location.z + shift_xyz[2]
+# new_location = carla.Location(*new_location_array)
+# rotation_by = (0, random.choice(rotations), 0)
+# new_rotation = carla.Rotation(*rotation_by)
+# new_transf = carla.Transform(new_location, new_rotation)
+# pedestrian_bp = random.choice(world.get_blueprint_library().filter('*walker.pedestrian*'))
+# pedestrian = world.try_spawn_actor(pedestrian_bp, new_transf)
 
+person.destroy()
+shift_xyz = [5,5,0]
+new_location_array = car_location.x + shift_xyz[0], car_location.y + shift_xyz[1], car_location.z + shift_xyz[2]
+new_location = carla.Location(*new_location_array)
+rotation_by = (0, 180, 0)
+new_rotation = carla.Rotation(*rotation_by)
+new_transform = carla.Transform(new_location, new_rotation)
+person = world.try_spawn_actor(person_bp, new_transform)
+
+
+
+# shift_xyz = [7,4,0]
+# new_location_array = car_location.x + shift_xyz[0], car_location.y + shift_xyz[1], car_location.z + shift_xyz[2]
+# new_location = carla.Location(*new_location_array)
+# rotation_by = (0, 180, 0)
+# new_rotation = carla.Rotation(*rotation_by)
+# new_transform = carla.Transform(new_location, new_rotation)
+# person = world.try_spawn_actor(person_bp, new_transform)
 
 pedestrian.destroy()
