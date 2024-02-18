@@ -4,8 +4,8 @@ import numpy as np
 import open3d as o3d
 
 
-original_source_file = "../../interactive_pcd_lib/jan31/source_cloud.ply"
-raycasted_source_file = "../../interactive_pcd_lib/jan31/raycasted_source_cloud.ply"
+original_source_file = "../../interactive_pcd_lib/feb18/source_cloud.ply"
+raycasted_source_file = "../../interactive_pcd_lib/feb18/raycasted_source_cloud.ply"
 
 
 pcd_source = o3d.io.read_point_cloud(original_source_file)  # Replace with your actual point cloud
@@ -41,7 +41,7 @@ ax = fig.add_subplot(111, projection='3d')
 
 # Plot the point cloud
 ax.scatter(x_source, y_source, z_source, color='black')
-ax.scatter(x_raycasted, y_raycasted, z_raycasted, color="red")
+ax.scatter(x_raycasted, y_raycasted, z_raycasted, color="red",s=6)
 ax.set_xlabel("X-Axis")
 ax.set_ylabel("Y-Axis")
 ax.set_zlabel("Z-Axis")
